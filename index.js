@@ -23,18 +23,19 @@ app.post("/chat", chat)
 app.get('/api/webhook',ValidateWebhook.validateServer)
 app.post('/api/webhook', async (req, res) => {
   try {
-    const incomingMessages = FacebookMessageParser.parsePayload(req.body)
-        await messagingClient.markSeen(senderId)
-        await messagingClient.toggleTyping(senderId,true)
+      const incomingMessages = FacebookMessageParser.parsePayload(req.body)
+      let senderId = "TEST"
+      await messagingClient.markSeen(incomingMessages.responseId)
+      await messagingClient.toggleTyping(senderId,true)
 
-        //promise based reaction on message send confirmation
-        const result = await messagingClient.sendTextMessage(senderId, 'Hello');
-        console.log(`Result sent with: ${result}`)
+      //promise based reaction on message send confirmation
+      const result = await messagingClient.sendTextMessage(senderId, 'Hello');
+      console.log(`Result sent with: ${result}`)
     } catch(e){
       console.log(e)
     }
     //callback based reaction on message confirmation
-    messagingClient.sendTextMessage("TESTID", 'Hello',(result) => console.log(`Result sent with: ${result}`))
+    messagingClient.sendTextMessage(senderId, 'Hello',(result) => console.log(`Result sent with: ${result}`))
 })
 
 app.listen(PORT, () => initialization(PORT))
