@@ -9,8 +9,6 @@ const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 const messagingClient = new FacebookMessagingAPIClient(PAGE_ACCESS_TOKEN);
 const app = express()
 
-app.use(express.json())
-
 app.get("/", bonjour)
 // TODO: ajouter le point d'entrée `GET /hello?nom=XXX` comme spécifié dans l'énoncé
 
