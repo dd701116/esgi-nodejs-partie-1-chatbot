@@ -9,6 +9,8 @@ const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 const messagingClient = new FacebookMessagingAPIClient(PAGE_ACCESS_TOKEN);
 const app = express()
 
+app.use(express.json())
+
 app.get("/", bonjour)
 // TODO: ajouter le point d'entrée `GET /hello?nom=XXX` comme spécifié dans l'énoncé
 
@@ -25,7 +27,7 @@ app.post('/api/webhook', async (req, res) => {
       const incomingMessages = FacebookMessageParser.parsePayload(req.body)
       console.log("incomingMessages :");
       console.log(incomingMessages)
-      let senderId = "TEST"
+      let senderId = 1208774376206007
       await messagingClient.markSeen(senderId)
       await messagingClient.toggleTyping(senderId,true)
 
