@@ -27,7 +27,7 @@ app.post('/api/webhook', async (req, res) => {
       const incomingMessages = FacebookMessageParser.parsePayload(req.body)
       console.log("incomingMessages :");
       console.log(incomingMessages)
-      let senderId = "nodeesgibot701116"
+      let senderId = "110446247797275"
       await messagingClient.markSeen(senderId)
       await messagingClient.toggleTyping(senderId,true)
 
