@@ -30,7 +30,7 @@ Affiche "Bonjour !"
     nom : <Le nom d'un utilisateur>
 }
 ```
-Affiche "Bonjour \<Le nom d\'un utilisateur\> !"
+Affiche "Bonjour \<Le nom d\'un utilisateur\> !"<br>
 Dans le cas ou nom est vide, il affiche "Quel est votre nom ?"
 
 ### POST /chat
