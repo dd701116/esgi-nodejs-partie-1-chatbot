@@ -27,7 +27,7 @@ app.post('/api/webhook', async (req, res) => {
       const incomingMessages = FacebookMessageParser.parsePayload(req.body)
       console.log("incomingMessages :");
       console.log(incomingMessages)
-      let senderId = "110446247797275"
+      let senderId = "1208774376206007"
       await messagingClient.markSeen(senderId)
       await messagingClient.toggleTyping(senderId,true)
 
