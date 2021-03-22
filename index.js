@@ -26,7 +26,7 @@ app.post('/api/webhook', async (req, res) => {
   try {
       const incomingMessages = FacebookMessageParser.parsePayload(req.body)
 
-      let senderId = 1
+      let senderId = 2
       await messagingClient.markSeen(incomingMessages.responseId)
       await messagingClient.toggleTyping(senderId,true)
 
