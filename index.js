@@ -22,9 +22,9 @@ app.post("/chat", chat)
 //  TODO: FB messenger bot
 app.get('/api/webhook',ValidateWebhook.validateServer)
 app.post('/api/webhook', async (req, res) => {
+  let senderId = "TEST"
   try {
       const incomingMessages = FacebookMessageParser.parsePayload(req.body)
-      let senderId = "TEST"
       await messagingClient.markSeen(incomingMessages.responseId)
       await messagingClient.toggleTyping(senderId,true)
 
