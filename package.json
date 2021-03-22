@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/dd701116/esgi-nodejs-partie-1-chatbot#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "fb-messenger-bot-api": "^4.4.0"
   }
 }
