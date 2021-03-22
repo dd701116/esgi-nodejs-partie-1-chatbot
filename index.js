@@ -22,23 +22,21 @@ app.post("/chat", chat)
 //  TODO: FB messenger bot
 app.get('/api/webhook',ValidateWebhook.validateServer)
 app.post('/api/webhook', async (req, res) => {
-  let senderId = "TEST"
+  
   try {
       const incomingMessages = FacebookMessageParser.parsePayload(req.body)
+
+      let senderId = 1
       await messagingClient.markSeen(incomingMessages.responseId)
       await messagingClient.toggleTyping(senderId,true)
 
       //promise based reaction on message send confirmation
       const result = await messagingClient.sendTextMessage(senderId, 'Hello');
       console.log(`Result sent with: ${result}`)
+      console.log(result)
     } catch(e){
       console.log(e)
     }
-    //callback based reaction on message confirmation
-    messagingClient.sendTextMessage(senderId, 'Hello',(result) => {
-      console.log(`Result sent with: ${result}`)
-      console.log(result)
-    })
 })
 
 app.listen(PORT, () => initialization(PORT))
