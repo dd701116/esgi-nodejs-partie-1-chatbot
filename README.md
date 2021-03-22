@@ -34,7 +34,6 @@ Git remote heroku added
 $ git push heroku main
 ```
 
-
 ## Les endpoints
 
 ### GET /
@@ -56,6 +55,13 @@ Dans le cas ou nom est vide, il affiche "Quel est votre nom ?"
 }
 ```
 Affiche "Nous sommes à Paris" si msg == 'ville' et "Il fait beau" si msg == 'météo'
+
+## DEMO
+
+Déployé sur heroku => https://arcane-castle-84208.herokuapp.com/
+
+<br>
+<hr>
 
 Site web source :
 - https://adrienjoly.com/cours-nodejs/
