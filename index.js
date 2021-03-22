@@ -6,7 +6,7 @@ const {FacebookMessagingAPIClient, ValidateWebhook, FacebookMessageParser} = req
 const PORT = process.env.PORT
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 
-const messagingClient = new facebook.FacebookMessagingAPIClient(PAGE_ACCESS_TOKEN);
+const messagingClient = new FacebookMessagingAPIClient(PAGE_ACCESS_TOKEN);
 const app = express()
 
 app.use(express.json())
@@ -21,7 +21,7 @@ app.post("/chat", chat)
 
 //  TODO: FB messenger bot
 app.get('/api/webhook',ValidateWebhook.validateServer)
-app.post('/api/webhook', (req, res) => {
+app.post('/api/webhook', async (req, res) => {
   try {
     const incomingMessages = messageParser.parsePayload(req.body)
         await messagingClient.markSeen(senderId)
