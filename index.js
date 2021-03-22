@@ -23,7 +23,7 @@ app.post("/chat", chat)
 app.get('/api/webhook',ValidateWebhook.validateServer)
 app.post('/api/webhook', async (req, res) => {
   try {
-    const incomingMessages = messageParser.parsePayload(req.body)
+    const incomingMessages = FacebookMessageParser.parsePayload(req.body)
         await messagingClient.markSeen(senderId)
         await messagingClient.toggleTyping(senderId,true)
 
