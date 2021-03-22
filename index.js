@@ -35,7 +35,10 @@ app.post('/api/webhook', async (req, res) => {
       console.log(e)
     }
     //callback based reaction on message confirmation
-    messagingClient.sendTextMessage(senderId, 'Hello',(result) => console.log(`Result sent with: ${result}`))
+    messagingClient.sendTextMessage(senderId, 'Hello',(result) => {
+      console.log(`Result sent with: ${result}`)
+      console.log(result)
+    })
 })
 
 app.listen(PORT, () => initialization(PORT))
