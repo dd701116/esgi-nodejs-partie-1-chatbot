@@ -1,0 +1,23 @@
+{
+  "name": "esgi-nodejs-partie-1-chatbot",
+  "version": "1.0.0",
+  "description": "Cours Node.jsCours Node.js - Partie 1 - Chat-bot en production avec Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dd701116/esgi-nodejs-partie-1-chatbot.git"
+  },
+  "author": "Dieunelson Dorcelus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dd701116/esgi-nodejs-partie-1-chatbot/issues"
+  },
+  "homepage": "https://github.com/dd701116/esgi-nodejs-partie-1-chatbot#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
