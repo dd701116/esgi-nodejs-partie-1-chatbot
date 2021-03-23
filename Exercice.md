@@ -1,7 +1,6 @@
 # esgi-nodejs-partie-1-chatbot
 Cours Node.jsCours Node.js - Partie 1 - Chat-bot en production avec Express
 
-## Exercice 1 - Afficher Hello World dans la sortie standard
 ### Q1 : Écrire un programme JavaScript qui affiche "Hello World" dans la sortie standard. (1 ligne de code)
 ```
 // TODO: lors de son exécution, ce programme doit écrire "Hello World" (sans les guillemets) dans la console
